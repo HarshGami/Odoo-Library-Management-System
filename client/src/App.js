@@ -43,22 +43,21 @@ function App() {
                     path="*"
                     element={<LibrarianDashboard />}
                   ></Route>
+                  <Route exact path="/add_book" element={<AddBook />}></Route>
                   <Route
                     exact
                     path="/view_history/:isbn"
                     element={<BookHistoryPage />}
                   ></Route>
                 </Routes>
-                <Route
-                  exact
-                  path="/add_book"
-                  element={<AddBook />}
-                ></Route>
               </Router>
             ) : (
               <>
                 <Router>
                   <NavBar isAuth={isAuth} setIsAuth={setIsAuth} role={role} />
+                  <Routes>
+                    <Route exact path="*" element={<AdminDashboard />}></Route>
+                  </Routes>
                 </Router>
               </>
             )}

@@ -23,7 +23,7 @@ function AddBook() {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                isbn,
+                ISBN: isbn,
                 quantity: parseInt(quantity),
             }),
         });
@@ -32,7 +32,7 @@ function AddBook() {
 
         if (response.status === 201) {
             console.log('Book added successfully:', data);
-            navigate('/librarian/dashboard'); // Redirect to librarian dashboard after adding book
+            navigate('*');
         } else {
             setError(data.message || 'Failed to add book.');
         }
