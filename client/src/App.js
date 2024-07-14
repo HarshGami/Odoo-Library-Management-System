@@ -7,6 +7,8 @@ import UserLandingPage from "./components/User/UserDashboard";
 import HistoryPage from "./components/User/UserHistory";
 import BookHistoryPage from "./components/Librarian/BookHistory";
 import LibrarianDashboard from "./components/Librarian/LibrarianDashboard";
+import AddBook from "./components/Librarian/AddBook";
+import AdminDashboard from "./components/Admin/AdminDashboard";
 
 function App() {
   const [isAuth, setIsAuth] = useState(false);
@@ -46,6 +48,11 @@ function App() {
                   exact
                   path="/view_history"
                   element={<BookHistoryPage />}
+                ></Route>
+                <Route
+                  exact
+                  path="/add_book"
+                  element={<AddBook />}
                 ></Route>
               </Router>
             ) : (
