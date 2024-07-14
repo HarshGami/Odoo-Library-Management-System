@@ -2,6 +2,8 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { FaUser } from "react-icons/fa";
+import Nav from "react-bootstrap/Nav";
+import { LinkContainer } from "react-router-bootstrap";
 
 function NavBar({ isAuth, setIsAuth, role }) {
   const username = localStorage.getItem("name");
@@ -42,30 +44,21 @@ function NavBar({ isAuth, setIsAuth, role }) {
               <div className="flex space-x-4">
                 {role === "1" ? (
                   <>
-                    <Link to="/" className="hover:text-gray-300">
-                      Dashboard
-                    </Link>
-                    <Link to="/report_form" className="hover:text-gray-300">
-                      Create New Report
-                    </Link>
-                    <Link to="/report_history" className="hover:text-gray-300">
-                      Report History
-                    </Link>
-                    <Link to="/collection_schedule" className="hover:text-gray-300">
-                      View Schedule
-                    </Link>
+                    <LinkContainer to={`/`}>
+                      <Nav.Link>Dashboard</Nav.Link>
+                    </LinkContainer>
+                    <LinkContainer to={`/User_history`}>
+                      <Nav.Link>User Inventory</Nav.Link>
+                    </LinkContainer>
                   </>
                 ) : role === "2" ? (
                   <>
-                    <Link to="/" className="hover:text-gray-300">
-                      Dashboard
-                    </Link>
-                    <Link to="/assigned_tasks" className="hover:text-gray-300">
-                      Assigned Tasks
-                    </Link>
-                    <Link to="/task_history" className="hover:text-gray-300">
-                      Task History
-                    </Link>
+                    <LinkContainer to={`/`}>
+                      <Nav.Link>Dashboard</Nav.Link>
+                    </LinkContainer>
+                    <LinkContainer to={`/view_history/:isbn`}>
+                      <Nav.Link>View History</Nav.Link>
+                    </LinkContainer>
                   </>
                 ) : (
                   <>
