@@ -7,6 +7,9 @@ const UserInventory = new mongoose.Schema(
     borrowDate: { type: Date, require: true },
     dueDate: { type: Date, require: true },
     status: { type: String, required: true, enum: ["Borrowed", "Returned"] },
+    isPenalty: { type: Boolean, default: false },
+    lateReturnPenalty: { type: Number, default: 0 },
+    isPaid: { type: Boolean, default: false },
     returnDate: { type: Date },
   },
   { collection: "user-inventory-data" }
