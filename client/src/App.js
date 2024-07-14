@@ -7,6 +7,8 @@ import UserLandingPage from "./components/User/UserDashboard";
 import HistoryPage from "./components/User/UserHistory";
 import BookHistoryPage from "./components/Librarian/BookHistory";
 import LibrarianDashboard from "./components/Librarian/LibrarianDashboard";
+import AddBook from "./components/Librarian/AddBook";
+import AdminDashboard from "./components/Admin/AdminDashboard";
 
 function App() {
   const [isAuth, setIsAuth] = useState(false);
@@ -41,6 +43,7 @@ function App() {
                     path="*"
                     element={<LibrarianDashboard />}
                   ></Route>
+                  <Route exact path="/add_book" element={<AddBook />}></Route>
                   <Route
                     exact
                     path="/view_history/:isbn"
@@ -52,6 +55,9 @@ function App() {
               <>
                 <Router>
                   <NavBar isAuth={isAuth} setIsAuth={setIsAuth} role={role} />
+                  <Routes>
+                    <Route exact path="*" element={<AdminDashboard />}></Route>
+                  </Routes>
                 </Router>
               </>
             )}

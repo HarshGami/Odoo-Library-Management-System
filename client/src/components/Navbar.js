@@ -56,21 +56,18 @@ function NavBar({ isAuth, setIsAuth, role }) {
                     <LinkContainer to={`/`}>
                       <Nav.Link>Dashboard</Nav.Link>
                     </LinkContainer>
+                    <LinkContainer to={`/add_book`}>
+                      <Nav.Link>Add Book</Nav.Link>
+                    </LinkContainer>
                     <LinkContainer to={`/view_history/:isbn`}>
                       <Nav.Link>View History</Nav.Link>
                     </LinkContainer>
                   </>
                 ) : (
                   <>
-                    <Link to="/" className="hover:text-gray-300">
-                      Dashboard
-                    </Link>
-                    <Link to="/assign_task" className="hover:text-gray-300">
-                      Assign Tasks
-                    </Link>
-                    <Link to="/task_status" className="hover:text-gray-300">
-                      Monitor Progress
-                    </Link>
+                    <LinkContainer to={`/`}>
+                      <Nav.Link>Dashboard</Nav.Link>
+                    </LinkContainer>
                   </>
                 )}
               </div>
