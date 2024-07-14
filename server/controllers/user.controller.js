@@ -69,7 +69,7 @@ exports.borrowBook = async (req, res) => {
       status: "Borrowed",
     });
 
-    res.status(201).json({
+    res.status(200).json({
       status: "ok",
       message: "Book borrowed successfully",
       borrowRecord: newBorrowRecord,

@@ -26,8 +26,8 @@ const UserLandingPage = () => {
     try {
       const response = await fetch(`http://localhost:5000/api/user/books`);
       if (response.status === 200) {
-        const data = await response.json();
         setBooks(data.books);
+        const data = await response.json();
       } else {
         console.error("Failed to fetch books:", response.message);
       }
@@ -58,7 +58,7 @@ const UserLandingPage = () => {
 
   const handleBorrowBook = async (isbn) => {
     const userEmail = localStorage.getItem('email')
-    const borrowDate = new Date().toISOString().split("T")[0];
+    const borrowDate = new Date();
 
     try {
       const response = await fetch(`http://localhost:5000/api/user/borrow`, {
@@ -74,12 +74,12 @@ const UserLandingPage = () => {
       });
 
       if (response.status === 200) {
-        console.log("Book borrowed successfully!");
+        alert("Book borrowed successfully!");
       } else {
-        console.error("Failed to borrow book:", response.message);
+        alert("Failed to borrow book.");
       }
     } catch (error) {
-      console.error("Error borrowing book:", error);
+      alert("Error borrowing book.");
     }
   };
 

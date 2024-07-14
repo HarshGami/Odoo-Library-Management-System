@@ -31,10 +31,10 @@ function AddBook() {
         const data = await response.json();
 
         if (response.status === 201) {
-            console.log('Book added successfully:', data);
+            alert('Book added successfully.');
             navigate('*');
         } else {
-            setError(data.message || 'Failed to add book.');
+            alert('Failed to add book.');
         }
     };
 

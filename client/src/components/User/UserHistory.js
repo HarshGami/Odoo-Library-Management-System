@@ -112,13 +112,13 @@ const HistoryPage = ({ userEmail }) => {
       );
 
       if (response.status === 200) {
-        console.log("Penalty paid successfully!");
+        alert("Penalty paid successfully!");
         fetchBorrowedBooks();
       } else {
-        console.error("Failed to pay penalty:", response.message);
+        alert("Failed to pay penalty.");
       }
     } catch (error) {
-      console.error("Error paying penalty:", error);
+      alert("Error paying penalty:");
     }
   };
 
