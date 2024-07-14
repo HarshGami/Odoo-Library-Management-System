@@ -3,6 +3,10 @@ import NavBar from "./components/Navbar";
 import Home from "./components/Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from "react";
+import UserLandingPage from "./components/User/UserDashboard";
+import HistoryPage from "./components/User/UserHistory";
+import BookHistoryPage from "./components/Librarian/BookHistory";
+import LibrarianDashboard from "./components/Librarian/LibrarianDashboard";
 
 function App() {
   const [isAuth, setIsAuth] = useState(false);
@@ -18,11 +22,31 @@ function App() {
               <>
                 <Router>
                   <NavBar isAuth={isAuth} setIsAuth={setIsAuth} role={role} />
+                  <Routes>
+                    <Route exact path="*" element={<UserLandingPage />}></Route>
+                    <Route
+                      exact
+                      path="/User_history"
+                      element={<HistoryPage />}
+                    ></Route>
+                  </Routes>
                 </Router>
               </>
             ) : role === "2" ? (
               <Router>
                 <NavBar isAuth={isAuth} setIsAuth={setIsAuth} role={role} />
+                <Routes>
+                  <Route
+                    exact
+                    path="*"
+                    element={<LibrarianDashboard />}
+                  ></Route>
+                  <Route
+                    exact
+                    path="/view_history/:isbn"
+                    element={<BookHistoryPage />}
+                  ></Route>
+                </Routes>
               </Router>
             ) : (
               <>

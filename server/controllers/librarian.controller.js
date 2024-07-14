@@ -24,12 +24,10 @@ exports.addBook = async (req, res) => {
 
     const existingBook = await bookmodel.findOne({ ISBN: ISBN });
     if (existingBook) {
-      return res
-        .status(400)
-        .json({
-          status: "error",
-          message: "Book with this ISBN already exists",
-        });
+      return res.status(400).json({
+        status: "error",
+        message: "Book with this ISBN already exists",
+      });
     }
 
     const googleBooksAPI = `https://www.googleapis.com/books/v1/volumes?q=isbn:${ISBN}`;
@@ -51,6 +49,7 @@ exports.addBook = async (req, res) => {
       year: bookInfo.publishedDate
         ? new Date(bookInfo.publishedDate).getFullYear()
         : null,
+      imageLink: bookInfo.imageLinks.thumbnail,
       genre: bookInfo.categories ? bookInfo.categories.join(", ") : "Unknown",
       quantity: quantity,
     });
