@@ -24,31 +24,31 @@ function App() {
               <>
                 <Router>
                   <NavBar isAuth={isAuth} setIsAuth={setIsAuth} role={role} />
-                  <Route
-                    exact
-                    path="*"
-                    element={<UserLandingPage />}
-                  ></Route>
-                  <Route
-                    exact
-                    path="/User_history"
-                    element={<HistoryPage />}
-                  ></Route>
+                  <Routes>
+                    <Route exact path="*" element={<UserLandingPage />}></Route>
+                    <Route
+                      exact
+                      path="/User_history"
+                      element={<HistoryPage />}
+                    ></Route>
+                  </Routes>
                 </Router>
               </>
             ) : role === "2" ? (
               <Router>
                 <NavBar isAuth={isAuth} setIsAuth={setIsAuth} role={role} />
-                <Route
-                  exact
-                  path="*"
-                  element={<LibrarianDashboard />}
-                ></Route>
-                <Route
-                  exact
-                  path="/view_history"
-                  element={<BookHistoryPage />}
-                ></Route>
+                <Routes>
+                  <Route
+                    exact
+                    path="*"
+                    element={<LibrarianDashboard />}
+                  ></Route>
+                  <Route
+                    exact
+                    path="/view_history/:isbn"
+                    element={<BookHistoryPage />}
+                  ></Route>
+                </Routes>
                 <Route
                   exact
                   path="/add_book"

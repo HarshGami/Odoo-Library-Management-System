@@ -8,6 +8,7 @@ const Book = new mongoose.Schema(
     publisher: { type: String },
     year: { type: Number, required: true },
     genre: { type: String },
+    imageLink: { type: String },
     quantity: { type: Number, required: true },
   },
   { collection: "book-data" }
