@@ -14,7 +14,7 @@ function FeatureCard({ icon: Icon, title, description }) {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <Icon className="text-blue-600 w-12 h-12 mb-4" />
+      <Icon className="text-green-600 w-12 h-12 mb-4" />
       <h3 className="text-xl font-bold text-gray-800">{title}</h3>
       <p className="mt-2 text-gray-600">{description}</p>
     </motion.div>
@@ -64,7 +64,7 @@ function Home({ setIsAuth }) {
           <h1 className="text-5xl md:text-6xl font-bold text-gray-800">Welcome to Your Library</h1>
           <p className="mt-4 text-xl md:text-2xl text-gray-600">Manage your books effortlessly and keep track of your borrowers.</p>
           <Link to="/register">
-            <button className="mt-8 px-6 py-3 bg-blue-600 text-white rounded-md text-lg">Get Started</button>
+            <button className="mt-8 px-6 py-3 bg-green-600 text-white rounded-md text-lg">Get Started</button>
           </Link>
         </motion.div>
       </header>

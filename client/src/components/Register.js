@@ -119,13 +119,13 @@ function Register({ setIsAuth }) {
       <div className="bg-white shadow-md rounded-lg p-8 w-full max-w-md">
         <div className="flex justify-center mb-4">
           <button
-            className={`w-1/2 py-2 ${form === 1 ? "border-b-2 border-blue-500" : ""}`}
+            className={`w-1/2 py-2 ${form === 1 ? "border-b-2 border-green-500" : ""}`}
             onClick={() => setForm(1)}
           >
             Log In
           </button>
           <button
-            className={`w-1/2 py-2 ${form === 2 ? "border-b-2 border-blue-500" : ""}`}
+            className={`w-1/2 py-2 ${form === 2 ? "border-b-2 border-green-500" : ""}`}
             onClick={() => setForm(2)}
           >
             Sign Up
@@ -191,7 +191,7 @@ function Register({ setIsAuth }) {
             </div>
             <button
               type="submit"
-              className="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              className="w-full bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
             >
               Sign Up
             </button>
@@ -220,7 +220,7 @@ function Register({ setIsAuth }) {
             </div>
             <button
               type="submit"
-              className="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              className="w-full bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
             >
               Log In
             </button>

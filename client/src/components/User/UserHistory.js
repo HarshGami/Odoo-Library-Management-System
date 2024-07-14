@@ -265,7 +265,7 @@ const HistoryPage = ({ userEmail }) => {
               </div>
               <div className="flex flex-col items-center justify-center w-1/2 space-y-4">
                 <button
-                  className="mt-4 w-28 px-4 py-2 bg-blue-500 text-white rounded"
+                  className="mt-4 w-28 px-4 py-2 bg-green-500 text-white rounded"
                   onClick={() => handleReturn(book.bookISBN)}
                   disabled={book.status === "Returned"}
                 >

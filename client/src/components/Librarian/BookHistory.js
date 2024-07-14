@@ -166,7 +166,7 @@ const BookHistoryPage = () => {
               key={number}
               onClick={() => handlePageChange(number)}
               className={`px-4 py-2 border rounded mx-1 ${
-                number === currentPage ? "bg-blue-500 text-white" : ""
+                number === currentPage ? "bg-green-500 text-white" : ""
               }`}
             >
               {number}
