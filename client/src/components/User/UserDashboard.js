@@ -26,8 +26,8 @@ const UserLandingPage = () => {
     try {
       const response = await fetch(`http://localhost:5000/api/user/books`);
       if (response.status === 200) {
-        setBooks(data.books);
         const data = await response.json();
+        setBooks(data.books);
       } else {
         console.error("Failed to fetch books:", response.message);
       }
